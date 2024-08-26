@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Build the Pet Clinic App') {
             steps {
-                dir("./petClinic/"){
+                dir("petClinic/"){
                     sh "ls"
                     sh "mvn clean package"
                 }
