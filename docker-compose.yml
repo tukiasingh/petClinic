@@ -1,0 +1,35 @@
+services:
+  pet-clinic-db:
+    image: mysql:8.0
+    container_name: pet-clinic-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=petclinic
+    ports:
+      - 3307:3306
+    networks:
+      - private
+    volumes:
+      - db:/var/lib/mysql
+    restart: always
+
+  pet-clinic-app:
+    build: ../petClinic
+    container_name: pet-clinic-app
+
+    ports:
+      - 9090:9090
+    depends_on:
+      - pet-clinic-db
+    networks:
+      - private
+    restart: always
+
+networks:
+  private :
+    name : pet-clinic-network
+
+volumes:
+  db:
+    driver: local
+

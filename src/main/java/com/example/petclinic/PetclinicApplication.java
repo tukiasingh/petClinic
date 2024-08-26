@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PetclinicApplication {
 
     public static void main(String[] args) {
+        // Externalize the Spring Properties
+        System.setProperty("spring.config.location", "application.properties");
         SpringApplication.run(PetclinicApplication.class, args);
     }
 
