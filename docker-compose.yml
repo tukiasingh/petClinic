@@ -14,7 +14,7 @@ services:
     restart: always
 
   pet-clinic-app:
-    build: ../petClinic
+    build: .
     container_name: pet-clinic-app
 
     ports:
