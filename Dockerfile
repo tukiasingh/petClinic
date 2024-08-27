@@ -15,4 +15,4 @@ WORKDIR /app
 #COPY ${JAR_FILE} petClinic.jar
 
 #Execute the java command -> java PetClinicApp
-CMD ["java", "-jar", "petclinic-0.0.1-SNAPSHOT.jar",  "--spring.config.name=../application.properties"]
+CMD ["java", "-jar", "petclinic-0.0.1-SNAPSHOT.jar"]
